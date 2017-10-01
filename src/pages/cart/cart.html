@@ -1,0 +1,36 @@
+<!--
+  Generated template for the CartPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Order Cart</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-list>
+  <ion-item *ngFor="let order of orderList">
+    <ion-thumbnail item-start>
+      <img src="{{order.item.product_picurl}}">
+    </ion-thumbnail>
+    <h2>{{order.item.product_name}}</h2>
+    <p> Quantity: {{order.quantity}} pack</p>
+    <p> Price: RM  {{order.quantity * order.item.product_price}}</p>
+    <button ion-button clear item-end (click)="removeItem(item)">Delete</button>
+  </ion-item>
+</ion-list>
+
+</ion-content>
+
+<ion-footer>
+ <!--  <ion-toolbar>
+    <ion-title>Grand Total: {{total}}</ion-title>
+  </ion-toolbar> -->
+  <button ion-button full color="secondary" (click)="presentConfirm()">Submit Order</button>
+</ion-footer>

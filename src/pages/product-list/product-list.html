@@ -1,0 +1,38 @@
+<!--
+  Generated template for the ProductListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color ="energized">
+    <ion-title>Products</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-list>
+  <ion-item *ngFor="let product of productList.products">
+    <ion-thumbnail item-start>
+      <img src="{{product.product_picurl}}">
+    </ion-thumbnail>
+    <h2>{{product.product_name}}</h2>
+    <h3>RM <span>{{currentNumber*product.product_price}}</span></h3> 
+    <ion-row>
+   <ion-icon name="remove-circle" color="secondary"(click)="decrement()"></ion-icon>
+   <p>   {{currentNumber}}   </p>
+   <ion-icon name="add-circle" color="danger" (click)="increment()"> </ion-icon>
+   </ion-row>
+   <button ion-button outline icon-left item-end (click)="addCart(product)"><ion-icon name="cart"></ion-icon>Order</button>
+  </ion-item>
+</ion-list>
+
+
+</ion-content>
+
+<ion-footer>
+<button ion-button full color="primary" (click)="buttonTapped()">Proceed to Order Cart</button>
+</ion-footer>

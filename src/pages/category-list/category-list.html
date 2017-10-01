@@ -1,0 +1,33 @@
+<!--
+  Generated template for the CategoryListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+ <ion-navbar color="energized">
+    <ion-title>Nakama Food</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+  <ion-card  *ngFor= "let category of categoryList" (click)=toList(category)>
+    <img src="{{category.category_picurl}}"/>
+    <div class="card-title">{{category.category_name}}</div>
+    <div class="card-subtitle">{{category.category_description}}</div>
+  </ion-card>
+
+  <!--  <ion-card (click)=toList(food)>
+    <img src="https://dudo6el28sqqp.cloudfront.net/gothamistgallery/2016/12/14/8d8793aa3siumai-jpg.jpeg"/>
+    <div class="card-title">Dim Sum</div>
+    <div class="card-subtitle">Sedap</div>
+  </ion-card>
+
+    <ion-card (click)=toList(food)>
+    <img src="http://www.yummytummyaarthi.com/wp-content/uploads/2011/03/1-4.jpg"/>
+    <div class="card-title">Paratha</div>
+    <div class="card-subtitle">Rangup</div>
+  </ion-card> -->
+
+
+</ion-content>
